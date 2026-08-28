@@ -37,7 +37,9 @@ def test_cli_backup_and_restore_round_trip(tmp_path, capsys):
     restore_dir = tmp_path / "restored"
 
     backup_exit = main(["backup", str(profile_dir), str(backup_root)])
-    restore_exit = main(["restore", str(backup_root), "alice", str(restore_dir)])
+    restore_exit = main(
+        ["restore", str(backup_root), profile_dir.name, str(restore_dir)]
+    )
 
     assert backup_exit == 0
     assert restore_exit == 0

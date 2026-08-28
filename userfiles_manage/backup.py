@@ -5,7 +5,6 @@ from __future__ import annotations
 import os
 import shutil
 from pathlib import Path
-from typing import List
 
 from .scanner import scan_user_files
 
@@ -47,7 +46,7 @@ def backup_user_files(
     return destination_root
 
 
-def list_backed_up_profiles(backup_root: str | os.PathLike) -> List[str]:
+def list_backed_up_profiles(backup_root: str | os.PathLike) -> list[str]:
     """Return the names of the profiles that have a backup under ``backup_root``."""
     root = Path(backup_root)
     if not root.exists():
