@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "userfiles_manage"
+version = "0.1.0"
+description = "Scan, back up and restore user files under a user profile name folder."
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.scripts]
+userfiles-manage = "userfiles_manage.cli:main"
+
+[tool.setuptools]
+packages = ["userfiles_manage"]
